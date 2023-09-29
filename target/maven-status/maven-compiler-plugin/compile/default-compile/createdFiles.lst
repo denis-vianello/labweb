@@ -1,6 +1,9 @@
 com/mycompany/semana4/sair.class
 com/mycompany/semana4/resources/JakartaEE91Resource.class
+com/mycompany/semana/model/DaoUsuario.class
+com/mycompany/semana/model/ConFactory.class
 com/mycompany/semana4/menu.class
 com/mycompany/semana4/errojava.class
 com/mycompany/semana4/welcome.class
 com/mycompany/semana4/JakartaRestConfiguration.class
+com/mycompany/semana/model/Usuario.class

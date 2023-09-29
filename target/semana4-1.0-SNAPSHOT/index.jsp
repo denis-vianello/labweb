@@ -17,7 +17,7 @@
         <%
             String mensagem = (String) session.getAttribute("msg");
             %>
-        <h1>Welcomeeee</h1>
+        <h1>Bem Vindo</h1>
         <form method="post" action="menu">
             <label>Digite seu login</label>
             <br/>

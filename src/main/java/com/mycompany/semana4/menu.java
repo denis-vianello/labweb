@@ -5,6 +5,8 @@ package com.mycompany.semana4;
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
+import com.mycompany.semana.model.DaoUsuario;
+import com.mycompany.semana.model.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,7 +33,7 @@ public class menu extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String deus = (String) session.getAttribute("jesus");
+        String deus = (String) session.getAttribute("lgn");
         if(deus == null)
             response.sendRedirect("index.jsp");
         else
@@ -86,9 +88,13 @@ public class menu extends HttpServlet {
         String name = request.getParameter("login");
         String senha = request.getParameter("senha");
        
-        if(name.equals("nome") && senha.equals("123")) {
+        DaoUsuario banco=new DaoUsuario(1, "denis", "1234");
+        Usuario us = banco.buscar(name);
+        
+        
+        if((us!= null)&& name.equals(us.getNome()) && senha.equals(us.getSenha())) {
             
-            request.getSession(true).setAttribute("jesus", name);
+            request.getSession(true).setAttribute("lgn", name);
             processRequest(request, response);
         } else {
             request.getSession(true).setAttribute("msg", "Login Invalido");
